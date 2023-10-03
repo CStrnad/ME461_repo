@@ -651,7 +651,8 @@ __interrupt void RXAINT_recv_ready(void)
         SciaRegs.SCIFFRX.bit.RXFIFORESET = 1;
     } else {
         RXAdata = RXAdata & 0x00FF;
-
+        if(RXAdata == 0x0062) GpioDataRegs.GPBSET.bit.GPIO34 = 1; // CJS if 'b' is received, turn off LED.
+        if(RXAdata == 0x0061) GpioDataRegs.GPBCLEAR.bit.GPIO34 = 1; //CJS if 'a' is received, turn on LED.
         numRXA ++;
     }
 

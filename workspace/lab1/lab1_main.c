@@ -334,10 +334,10 @@ __interrupt void cpu_timer0_isr(void)
         }
     }
 
-    if ((numTimer0calls%50) == 0) {
-		// Blink LaunchPad Red LED
-		GpioDataRegs.GPBTOGGLE.bit.GPIO34 = 1;
-    }
+//    if ((numTimer0calls%50) == 0) {
+//		// Blink LaunchPad Red LED
+//		GpioDataRegs.GPBTOGGLE.bit.GPIO34 = 1;
+//    }
 
 
     // Acknowledge this interrupt to receive more interrupts from group 1
